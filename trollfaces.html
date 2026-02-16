@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troll Face Quest Games</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .swf {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<script src="https://greys2121.github.io/RUFFFFFLE_EMBED/ruffle/ruffle.js"></script>
+
+<div class="container">
+    <embed id="game" class="swf" type="application/x-shockwave-flash">
+</div>
+
+<script>
+    // Get number from URL
+    // Example: trollfaces.html?3
+    const params = new URLSearchParams(window.location.search);
+    const gameNumber = params.keys().next().value || "1";
+
+    // Set SWF source dynamically
+    document.getElementById("game").src = `trollface-quest-${gameNumber}.swf`;
+</script>
+
+</body>
+</html>
